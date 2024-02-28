@@ -21,7 +21,7 @@
   <script>
     $(function() {
       function fetchImages() {
-        $.get('images/', function(data) {
+        $.get('images', function(data) {
           $(data).find('a').each(function(index, element) {
             var imageSrc = $(element).attr('href');
             if (imageSrc.match(/\.(jpe?g|png|gif)$/)) {
