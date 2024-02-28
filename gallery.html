@@ -11,17 +11,110 @@
   <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script/main.js"></script>
 </head>
 
 <body>
  
   <h1>See the image by clicking on the Frame</h1>
-  <div class="wrapper"></div>
+  <div class="wrapper">
+    <div class="box item-1"><img src="images/1.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-1"></div>
+      <div class="overlay ovrl-right ovrl-1"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-2"><img src="images/2.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-2"></div>
+      <div class="overlay ovrl-right ovrl-2"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-3"><img src="images/3.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-3"></div>
+      <div class="overlay ovrl-right ovrl-3"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-4"><img src="images/4.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-4"></div>
+      <div class="overlay ovrl-right ovrl-4"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-5"><img src="images/5.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-5"></div>
+      <div class="overlay ovrl-right ovrl-5"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-6"><img src="images/6.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-6"></div>
+      <div class="overlay ovrl-right ovrl-6"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-7"><img src="images/7.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-7"></div>
+      <div class="overlay ovrl-right ovrl-7"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-8"><img src="images/8.jpg" alt="">
+      <div class="overlay ovrl-left ovrl-8"></div>
+      <div class="overlay ovrl-right ovrl-8"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-9"><img src="images/9.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-9"></div>
+      <div class="overlay ovrl-right ovrl-9"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-1"><img src="images/10.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-1"></div>
+      <div class="overlay ovrl-right ovrl-1"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-2"><img src="images/12.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-2"></div>
+      <div class="overlay ovrl-right ovrl-2"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-3"><img src="images/13.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-3"></div>
+      <div class="overlay ovrl-right ovrl-3"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-4"><img src="images/14.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-4"></div>
+      <div class="overlay ovrl-right ovrl-4"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-5"><img src="images/15.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-5"></div>
+      <div class="overlay ovrl-right ovrl-5"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-6"><img src="images/16.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-6"></div>
+      <div class="overlay ovrl-right ovrl-6"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-7"><img src="images/17.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-7"></div>
+      <div class="overlay ovrl-right ovrl-7"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-8"><img src="images/18.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-8"></div>
+      <div class="overlay ovrl-right ovrl-8"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
+    <div class="box item-9"><img src="images/19.jpeg" alt="">
+      <div class="overlay ovrl-left ovrl-9"></div>
+      <div class="overlay ovrl-right ovrl-9"></div>
+      <div class="locker"><i class="arrow fa fa-arrows-h" aria-hidden="true"></i></div>
+    </div>
 
+  </div>
+<!--   
   <script>
     $(function() {
       function fetchImages() {
-        $.get('images', function(data) {
+        $.get('images/', function(data) {
           $(data).find('a').each(function(index, element) {
             var imageSrc = $(element).attr('href');
             if (imageSrc.match(/\.(jpe?g|png|gif)$/)) {
@@ -55,7 +148,7 @@
       // Call fetchImages on page load
       fetchImages();
     });
-  </script>
+  </script> -->
 
 
 </body>
