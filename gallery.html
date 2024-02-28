@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Arlynda | Wendel</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+ 
+  <h1>See the gallery by clicking on the Frame</h1>
+  <div class="wrapper"></div>
+
+  <script>
+    $(function() {
+      function fetchImages() {
+        $.get('images', function(data) {
+          $(data).find('a').each(function(index, element) {
+            var imageSrc = $(element).attr('href');
+            if (imageSrc.match(/\.(jpe?g|png|gif)$/)) {
+              var img = $('<img>').attr('src', imageSrc).attr('alt', 'Image ' + (index + 1));
+              var container = $('<div>').addClass('box item-' + (index + 1));
+              var overlayLeft = $('<div>').addClass('overlay ovrl-left ovrl-' + (index + 1));
+              var overlayRight = $('<div>').addClass('overlay ovrl-right ovrl-' + (index + 1));
+              var locker = $('<div>').addClass('locker').append($('<i>').addClass('arrow fa fa-arrows-h').attr('aria-hidden', 'true'));
+              container.append(img, overlayLeft, overlayRight, locker);
+              $('.wrapper').append(container);
+            }
+          });
+        }).fail(function() {
+          console.error('Failed to fetch images.');
+        });
+      }
+
+      $('.wrapper').on('mousedown', '.box', function(e) {
+        const gate = $(this).children('div');
+        $(this).children('.locker').hide();
+        gate.each(function(index, element) {
+          if ($(element).hasClass('ovrl-left')) {
+            $(element).toggleClass('move-right');
+          }
+          if ($(element).hasClass('ovrl-right')) {
+            $(element).toggleClass('move-left');
+          }
+        });
+      });
+
+      // Call fetchImages on page load
+      fetchImages();
+    });
+  </script>
+
+
+</body>
+
+</html>
